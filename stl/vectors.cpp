@@ -47,15 +47,37 @@ int main(){
     // for(auto it :v)cout<<it<<" ";
     // cout<<endl; 
     
+    //Deletion
+
     //{1,2,3,4} ---> {2,3,4}
-    v.erase(v.begin());
-      for(auto it: v)cout<<it<<" ";
-    cout<<endl;
-    v.push_back(1);
+    // v.erase(v.begin());
+    //   for(auto it: v)cout<<it<<" ";
+    // cout<<endl;
+    // v.push_back(1);
 
     //{2,3,4,1} ---> {2}
-    v.erase(v.begin()+1,v.begin()+3);  //v.erase(start_index,end_index) . end_index is not included...
-    for(auto it: v)cout<<it<<" ";
-    cout<<endl;
+    // v.erase(v.begin()+1,v.begin()+3);  //v.erase(start_index,end_index) . end_index is not included...
+    // for(auto it: v)cout<<it<<" ";
+    // cout<<endl
+
+    //Insertion
+    // vector<int> vinsertion(2,100); //{100,100}
+    // vinsertion.insert(vinsertion.begin(),300); //{300,100,100}
+    // vinsertion.insert(vinsertion.begin()+1, 2, 10); // v.insert(desired_index, number_of_instances, element_to_be_added)
+
+    // for(auto it: vinsertion)cout<<it<<" "; cout<<endl;
+
+    //Copy
+    vector<int> vcopy(2,50); //{50,50}
+    vector<int>  vcopy2(3,100);
+    vcopy2.insert(vcopy2.begin(),vcopy.begin(),vcopy.end()); //{100,100,100,50,50};
+    // for(auto it: vcopy2)cout<<it<<" ";
+    // cout<<endl;
+      
+    //   cout<<vcopy2.size();
+      vcopy2.pop_back();
+        vcopy2.swap(vcopy);
+        // vcopy2.clear();
+        cout<<vcopy2.empty();
 
 }
