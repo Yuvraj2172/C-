@@ -24,4 +24,5 @@ int main(){
 
     c=i+c;
     cout<<c<<endl;
+
 }
