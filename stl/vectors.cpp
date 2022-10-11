@@ -56,5 +56,6 @@ int main(){
     //{2,3,4,1} ---> {2}
     v.erase(v.begin()+1,v.begin()+3);  //v.erase(start_index,end_index) . end_index is not included...
     for(auto it: v)cout<<it<<" ";
+    cout<<endl;
 
 }
