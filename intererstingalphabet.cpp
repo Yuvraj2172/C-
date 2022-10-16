@@ -3,7 +3,7 @@ using namespace std;
 int main(){
     int n;
     cin>>n;
-    char ch=char('A'+n-1);
+    // char ch=char('A'+n-1);
     int i=1;
     while(i<=n){
         int j=i;

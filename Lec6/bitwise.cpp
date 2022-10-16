@@ -10,7 +10,6 @@ int main (){
     cout<<ror<<endl;
     cout<<rand<<endl;
     cout<<rnot<<endl;
-    cout<<rnot<<endl;
     cout<<rxor<<endl;
     cout<<rls<<endl;
     cout<<rrs<<endl;
