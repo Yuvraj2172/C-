@@ -12,12 +12,12 @@ int main(){
         }
         int j=1;
         while(j<=i){
-            cout<<'*';
+            cout<<j;
             j++;
         }
         int t=1;
         while(t<i){
-            cout<<'*';
+            cout<<t;
             t++;
         }
         cout<<endl;
