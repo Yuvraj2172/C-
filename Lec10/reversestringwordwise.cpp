@@ -1,5 +1,4 @@
 #include <iostream>
-// #include "solution.h"
 using namespace std;
 int length(char input[])
 {
@@ -23,11 +22,6 @@ int wordLength(char input[], int n)
     }
     return wordlen;
 }
-void reverseword(char input[], int j)
-{
-    int wordlen = wordLength(input, 0);
-    cout << wordlen;
-}
 void reversestring(char input[])
 {
     int len = length(input);
@@ -45,23 +39,12 @@ void reverseStringWordWise(char input[])
     {
         int wordlen = wordLength(input, i);
         int j = i;
-        // cout << wordlen << " ";
         int k=0;
         while(k<wordlen/2){
             swap(input[k+j],input[j+wordlen -1-k]);
             k++;
         }
-        // while (j < wordlen + i)
-        // {
-        //     cout << input[j];
-        //     j++;
-        // }
-        // cout << endl;
-        // for(j=i;j<(wordlen+i)/2;j++){
-        //     swap(input[j],input[wordlen-1-j]);
-        // }
         i = i + wordlen + 1;
-        // cout<<"i for "<<i<<" word is : "<<i<<" ";
     }
 }
 int main()
