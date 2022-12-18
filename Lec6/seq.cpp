@@ -26,7 +26,7 @@ bool incdec(vector<int> &v){
     for(int j=0;j<v.size()-1;j++){
         if(v[j]<=v[j+1]){
             k=j;
-            flag = false;
+            flag1 = false;
             break;
         }
     }

@@ -4,10 +4,7 @@ using namespace std;
 void printSubstrings(char input[]) {
     for(int i=0;i<strlen(input);i++){
         for(int j=i;j<strlen(input);j++){
-            for(int k=i;k<=j;k++){
-                cout<<input[k];
-            }
-            cout<<endl;
+           cout<<input.substr(i,j);
         }
     }
    

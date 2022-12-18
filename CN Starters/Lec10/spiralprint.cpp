@@ -13,22 +13,22 @@ int main(){
        for(int i =colstart ; i<=colend;i++){
         cout<<arr[rowstart][i]<<" ";
         c++;
-       };
+       }cout<<endl;
        rowstart = rowstart +1;
        for(int i =  rowstart;i<=rowend;i++){
         cout<<arr[i][colend]<<" ";
         c++;
-       }
+       }cout<<endl;
        colend = colend -1;
        for(int i=colend; i>=colstart ; i--){
         cout<<arr[rowend][i]<<" ";
         c++;
-       }
+       }cout<<endl;
        rowend = rowend -1;
        for(int i=rowend ; i>=rowstart;i--){
         cout<<arr[i][colstart]<<" ";
         c++;
-       }
+       }cout<<endl;
        colstart= colstart +1;
     }
 
