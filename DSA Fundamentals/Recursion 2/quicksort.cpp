@@ -18,7 +18,7 @@ int partition(int arr[], int start, int end)
    
     int i = start;
     int j = end;
-    while (i < pivotIndex && j < pivotIndex)
+    while (i < pivotIndex && j > pivotIndex)
     {
         if (arr[i] <= pivot)
         {
@@ -58,7 +58,7 @@ void quickSortHelper(int arr[], int size)
 }
 int main()
 {
-    int arr[] = {-1,-2,-3,-4,-5,-6,-7,-8,-9,-10};
+    int arr[] = {10,9,8,7,6,5,4,3,2,1};
     int size = 10;
     quickSortHelper(arr, size);
     for (int i = 0; i < size; i++)
