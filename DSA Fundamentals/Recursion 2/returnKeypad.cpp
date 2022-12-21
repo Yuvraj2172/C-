@@ -15,7 +15,7 @@ int keypad(int num, string output[]){
     int smallerNumber = num/10;
     int lastDigit = num%10; 
     int smallOutputSize = keypad(smallerNumber, output);
-input = getString(lastDigit);
+    input = getString(lastDigit);
     int ans_size = smallOutputSize*(input.size());
     int k=0;
     string  temp[ans_size];
