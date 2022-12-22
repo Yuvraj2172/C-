@@ -32,7 +32,29 @@ void printSubsetsOfArray(int arr[], int n) {
      }
 }
 
-
+void printSubsetsOfArray(int arr[], int start, int n, int output[], int osize){
+  if(start == n){
+    for(int i=0;i<osize ;i++){
+      cout<<output[i]<<" ";
+    }
+    cout<<endl;
+    return;
+  }
+  int smallarr[1000];
+  int smallSize = 0;
+  printSubsetsOfArray(arr, start+1, n, output, osize);
+  int i=0;
+  for(;i<osize ;i++){
+    smallarr[i]=output[i];
+  }
+  smallarr[i] = arr[start];
+  printSubsetsOfArray(arr,  start+1, n,smallarr,  osize+1);
+}
+void printSubsetsOfArray(int arr[], int n) {
+  int output[10000];
+  int osize = 0;
+  printSubsetsOfArray(arr, 0, n, output, osize);
+}
 
 
 int main() {
