@@ -26,10 +26,6 @@ int binarySearchHelper(int input[], int start, int end , int element){
 int binarySearch(int input[], int size, int element) {
    return binarySearchHelper(input , 0, size -1,element);
 }
-
-
-
-
 int main() {
     int input[100000],length,element, ans;
     cin >> length;
