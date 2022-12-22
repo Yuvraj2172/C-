@@ -1,0 +1,1 @@
+{"name":"Local: subsetsumtok","url":"e:\\C++\\DSA Fundamentals\\Recursion 2\\subsetsumtok.cpp","tests":[{"id":1671738488677,"input":"6\n17 18 6 11 2 4 \n6","output":"2 4 \n6 "}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\C++\\DSA Fundamentals\\Recursion 2\\subsetsumtok.cpp","group":"local","local":true}
