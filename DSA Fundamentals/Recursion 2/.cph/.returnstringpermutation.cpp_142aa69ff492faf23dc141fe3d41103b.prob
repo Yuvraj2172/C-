@@ -1,0 +1,1 @@
+{"name":"Local: returnstringpermutation","url":"e:\\C++\\DSA Fundamentals\\Recursion 2\\returnstringpermutation.cpp","tests":[{"id":1671743607897,"input":"abc","output":"abc\nacb\nbac\nbca\ncab\ncba"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\C++\\DSA Fundamentals\\Recursion 2\\returnstringpermutation.cpp","group":"local","local":true}
