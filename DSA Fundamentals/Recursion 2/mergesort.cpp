@@ -1,4 +1,3 @@
-
 #include <iostream>
 using namespace std;
 void merge(int input[], int start, int mid, int end) {
