@@ -1,0 +1,1 @@
+{"name":"Local: maxprofitonapp","url":"e:\\C++\\DSA Fundamentals\\Test1\\maxprofitonapp.cpp","tests":[{"id":1672227242905,"input":"4\n30 20 53 14","output":"60"},{"id":1672227260124,"input":"5\n34 78 90 15 67","output":"201"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\C++\\DSA Fundamentals\\Test1\\maxprofitonapp.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: splitarray","url":"e:\\C++\\DSA Fundamentals\\Test1\\splitarray.cpp","tests":[{"id":1672228789263,"input":"2\n1 2","output":"false"},{"id":1672228794582,"input":"3\n1 4 3","output":"true"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\C++\\DSA Fundamentals\\Test1\\splitarray.cpp","group":"local","local":true}
