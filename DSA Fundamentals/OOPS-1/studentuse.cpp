@@ -12,7 +12,7 @@ int main(){
     cout<<s1.roll<<" "<<s1.age<<"\n";
     cout<<s2.roll<<" "<<s2.age<<"\n";
     //Creates objects dynamically.
-    Student *s4 = new Student;
+    Student *s4 = new Student();
     (*s4).age =15;
     (*s4).roll = 19;
 
