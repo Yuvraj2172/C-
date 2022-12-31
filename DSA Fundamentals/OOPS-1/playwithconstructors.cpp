@@ -8,6 +8,9 @@ int main(){
     Student s4(s3); //Copy constructor will be called
     s1 = s2; // Copy assignment operator... No constructor calling 
     Student s5 = s4;
+    // Student s5;
+    // s5=s4;
+    // this would get simplified to Student s5(s4)... copy constructor will be called... 
 
 
 }
