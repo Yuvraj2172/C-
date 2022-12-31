@@ -37,5 +37,10 @@ class Student{
         if(a < 0)return;
         roll = a;
     }
+
+    //Destructor
+    ~Student(){
+        cout<<"Destructor Called\n";
+    }
 };
 
