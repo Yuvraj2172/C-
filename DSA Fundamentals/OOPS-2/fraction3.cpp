@@ -90,4 +90,13 @@ public:
     {
        return (numerator==f2.numerator && (denominator==f2.denominator));
     }
+    // void operator++(){
+    //     numerator = numerator + denominator;
+    //     Simplify();
+    // }
+    Fraction& operator++(){ // to prevent the internal copying ... we can return the object by reference...
+        numerator = numerator + denominator;
+        Simplify();
+        return *this;
+    }
 };
