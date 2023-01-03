@@ -99,4 +99,23 @@ public:
         Simplify();
         return *this;
     }
+    //Post-increament
+    Fraction operator++(int){
+        Fraction fnew(numerator,denominator);
+       this->numerator= this->numerator + this->denominator;
+        Simplify();
+        fnew.Simplify();
+        return fnew;
+    }
+    Fraction& operator+=(Fraction const &f2) {
+        int lcm = denominator * f2.denominator;
+        int x = lcm / denominator;
+        int y = lcm / f2.denominator;
+
+        int num = x * numerator + (y * f2.numerator);
+        numerator = num;
+        denominator = lcm;
+        Simplify();
+        return *this;
+    }
 };
