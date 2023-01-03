@@ -45,7 +45,7 @@ public:
         data[nextIndex] = element;
         nextIndex++;
     }
-    int get(int i)
+    int get(int i) const 
     {
         if (i < nextIndex)
         {
@@ -65,7 +65,7 @@ public:
         }
         return;
     }
-    void print()
+    void print()const 
     {
         for (int i = 0; i < nextIndex; i++)
         {
