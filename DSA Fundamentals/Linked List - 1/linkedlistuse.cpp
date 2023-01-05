@@ -16,17 +16,21 @@ Node* takeInput(){
    cout<<"Enter the elements one by one : \n";
    cin>>data;
    Node *head = NULL;
+   Node *tail = NULL;
    while(data!=-1){
     Node *newnode = new Node(data);
     if(head==NULL){
         head = newnode;
+        tail = newnode;
     }
     else {
-        Node *temp = head;
-        while(temp->next !=NULL){
-            temp = temp ->next;
-        }
-        temp->next = newnode;
+        // Node *temp = head;
+        // while(temp->next !=NULL){
+        //     temp = temp ->next;
+        // }
+
+        tail->next = newnode;
+        tail  = newnode;
     }
     cin>>data;
    }
