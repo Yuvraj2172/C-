@@ -1,0 +1,1 @@
+{"name":"Local: printithnode","url":"e:\\C++\\DSA Fundamentals\\Linked List - 1\\printithnode.cpp","tests":[{"id":1672942453103,"input":"1\n3 4 5 2 6 1 9 -1\n3","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\C++\\DSA Fundamentals\\Linked List - 1\\printithnode.cpp","group":"local","local":true}
