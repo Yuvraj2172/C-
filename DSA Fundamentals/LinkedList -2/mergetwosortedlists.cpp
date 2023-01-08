@@ -22,45 +22,82 @@ public:
 	}
 };
 
-Node *mergeTwoSortedLinkedLists(Node *head1, Node *head2)
-{	
-    if(head1==NULL)return head2;
-	if(head2==NULL) return head1;
-	// if(head1==NULL && head2 ==NULL)return  head1;
+/****************************************************************
+ 
+    Following is the class structure of the Node class:
 
-	Node* fasthead=NULL;
-	Node* fasttail = NULL;
-	Node*temp1 = head1;
-	Node* temp2 = head2;
+        class Node
+        {
+        public:
+	        int data;
+	        Node *next;
+	        Node(int data)
+	        {
+		        this->data = data;
+		        this->next = NULL;
+	        }
+        };
 
-	if(temp1->data <= temp2->data){
-		fasthead = temp1;
-		temp1 = temp1->next;
+*****************************************************************/
+Node *mergeTwoSortedLinkedLists(Node *head1, Node *head2) {
+  if (head1 == NULL)
+    return head2;
+  if (head2 == NULL)
+    return head1;
+  // if(head1==NULL && head2 ==NULL)return  head1;
+
+  Node *fasthead = NULL;
+  Node *fasttail = NULL;
+  Node *temp1 = head1;
+  Node *temp2 = head2;
+
+  if (temp1->data <= temp2->data) {
+    fasthead = temp1;
+    temp1 = temp1->next;
+  } else {
+    fasthead = temp2;
+    temp2 = temp2->next;
+  }
+  fasttail = fasthead;
+  while (temp1 != NULL && temp2 != NULL) {
+    if (temp1->data <= temp2->data) {
+      fasttail->next = temp1;
+      temp1 = temp1->next;
+    } else {
+      fasttail->next = temp2;
+      temp2 = temp2->next;
+    }
+    fasttail = fasttail->next;
+  }
+  if (temp1 != NULL) {
+    fasttail->next = temp1;
+  }
+  if (temp2 != NULL) {
+    fasttail->next = temp2;
+  }
+  return fasthead;
+}
+Node* findmid(Node* head){
+	if(head==NULL || head->next ==NULL)return head;
+	Node* slow = head;
+	Node* fast = head->next;
+	while(fast!=NULL && fast->next!=NULL){
+		slow = slow ->next;
+		fast = fast->next ->next;
 	}
-	else {
-		fasthead = temp2;
-		temp2 = temp2->next;
-	}
-	fasttail= fasthead;
-	while(temp1!=NULL && temp2!=NULL){
-		if(temp1->data <=temp2->data){
-			fasttail ->next = temp1;
-			temp1 = temp1->next;
-		}
-		else {
-			fasttail ->next = temp2;
-			temp2 = temp2 ->next;
-		}
-		fasttail = fasttail ->next;
-	}
-	if(temp1!=NULL){
-		fasttail ->next = temp1;
-	}
-	if(temp2!=NULL) {
-		fasttail ->next = temp2;
-	}
-	return fasthead;
-}void print(Node *head)
+	return slow;
+}
+Node *mergeSort(Node *head)
+{
+	if(head==NULL || head->next==NULL)return head;
+	Node* mid = findmid(head);
+	Node* right = mid->next;
+	mid->next =NULL;
+    Node *left = mergeSort(head);
+	right = mergeSort(right);
+        return mergeTwoSortedLinkedLists(left, right);
+}
+void print(Node *head)
 {
 	Node *temp = head;
 	while (temp != NULL)
