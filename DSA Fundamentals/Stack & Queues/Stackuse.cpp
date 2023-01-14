@@ -2,7 +2,7 @@
 using namespace std;
 #include "StackUsingArray.cpp"
 int main(){
-    StackUsingArray st(4);
+    StackUsingArray st;
     st.push(10);
     st.push(20);
     st.push(30);
