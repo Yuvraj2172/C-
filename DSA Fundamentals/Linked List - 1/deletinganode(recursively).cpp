@@ -58,6 +58,9 @@ Node *deleteNodeRec(Node *head, int pos) {
 	return head;
 }
 
+void deleteAlternate(Node* head){
+	if(head==NULL || head->next==NULL)return head;
+}
 void print(Node *head)
 {
 	Node *temp = head;
