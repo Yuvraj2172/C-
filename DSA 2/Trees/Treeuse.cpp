@@ -1,6 +1,30 @@
 #include<bits/stdc++.h>
 using namespace std;
 #include "TreeNode.h"
+TreeNode<int>* takeInputLevelwise(){
+    int rootdata;
+    cout<<"Enter root data\n";
+    cin>>rootdata;
+    TreeNode<int>* root = new TreeNode<int>(rootdata);
+    queue<TreeNode<int>*> pendingNodes;
+    pendingNodes.push(root);
+    while(!pendingNodes.empty()){
+        TreeNode<int>* front = pendingNodes.front();
+        pendingNodes.pop();
+        cout<<"Enter number of children of "<<front->data;
+        int numChild;
+        cin>>numChild;
+        for(int i=0;i<numChild;i++){
+            int childData ;
+            cout<<"Enter "<<i<<" th child of "<<front->data<<endl;
+            cin>>childData;
+            TreeNode<int>* child = new TreeNode<int>(childData);
+            front-> children.push_back(child);
+            pendingNodes.push(child);
+        }
+    }
+    return root;
+}
 TreeNode<int>* takeInput(){
     int rootdata;
     cout<<"Enter the root data ";
@@ -33,6 +57,6 @@ int main(){
     // TreeNode<int>* node2 = new TreeNode<int>(30);
     // root->children.push_back(node1);
     // root->children.push_back(node2);
-    TreeNode<int>* root = takeInput();
+    TreeNode<int>* root = takeInputLevelwise();
     printTree(root);
 }
