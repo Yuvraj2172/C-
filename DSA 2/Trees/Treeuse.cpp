@@ -1,6 +1,31 @@
 #include<bits/stdc++.h>
 using namespace std;
 #include "TreeNode.h"
+void printLevelWise(TreeNode<int>* root) {
+  if (root == NULL) {
+    return;
+  }
+  queue<TreeNode<int> *> q;
+  TreeNode<int> *temp = root;
+  q.push(temp);
+  int j = 0;
+  while (!q.empty()) {
+    TreeNode<int> *child = q.front();
+    cout << child->data << ":";
+    q.pop();
+    for (int i = 0; i < child->children.size(); i++) {
+      if (i == 0) {
+        cout << child->children[i]->data;
+      }
+
+      else {
+        cout << "," << child->children[i]->data;
+      }
+      q.push(child->children[i]);
+    }
+    cout << "\n";
+  }
+}
 TreeNode<int>* takeInputLevelwise(){
     int rootdata;
     cout<<"Enter root data\n";
@@ -51,6 +76,7 @@ void printTree(TreeNode<int>* root){
         printTree(root->children[i]);
     }
 }
+
 int main(){
     // TreeNode<int>* root = new TreeNode<int>(10);
     // TreeNode<int>* node1 = new TreeNode<int>(20);
@@ -58,5 +84,5 @@ int main(){
     // root->children.push_back(node1);
     // root->children.push_back(node2);
     TreeNode<int>* root = takeInputLevelwise();
-    printTree(root);
+    printLevelwise(root);
 }
