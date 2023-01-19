@@ -101,6 +101,22 @@ int sumOfNodes(TreeNode<int>* root) {
   }
   return sum;
 }
+TreeNode<int>* maxDataNode(TreeNode<int>* root) {
+  int maxdata = 0;
+  queue<TreeNode<int> *> q;
+  TreeNode<int> *temp = root;
+  q.push(temp);
+  while (!q.empty()) {
+    TreeNode<int> *child = q.front();
+    maxdata = max(maxdata, child->data);
+    q.pop();
+    for (int i = 0; i < child->children.size(); i++) {
+      q.push(child->children[i]);
+    }
+  }
+  TreeNode<int> *maxNode = new TreeNode<int>(maxdata);
+  return maxNode;
+}
 int main(){
     // TreeNode<int>* root = new TreeNode<int>(10);
     // TreeNode<int>* node1 = new TreeNode<int>(20);
