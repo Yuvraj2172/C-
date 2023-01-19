@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #include "TreeNode.h"
-void printLevelWise(TreeNode<int>* root) {
+void printLevelwise(TreeNode<int>* root) {
   if (root == NULL) {
     return;
   }
@@ -76,6 +76,17 @@ void printTree(TreeNode<int>* root){
         printTree(root->children[i]);
     }
 }
+int numNodes(TreeNode<int>* root){
+    if(root==NULL)return;
+    if(root->children.size()==0){
+        return 0;
+    }
+    int ans =1;
+    for(int i=0;i<root->children.size();i++){
+        ans += numNodes(root->children[i]);
+    }
+    return ans+1;
+}
 
 int main(){
     // TreeNode<int>* root = new TreeNode<int>(10);
@@ -84,5 +95,6 @@ int main(){
     // root->children.push_back(node1);
     // root->children.push_back(node2);
     TreeNode<int>* root = takeInputLevelwise();
-    printLevelwise(root);
+    // printLevelwise(root);
+    cout<<numNodes(root);
 }
