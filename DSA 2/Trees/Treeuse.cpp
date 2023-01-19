@@ -83,7 +83,24 @@ int numNodes(TreeNode<int>* root){
     }
     return ans;
 }
-
+int sumOfNodes(TreeNode<int>* root) {
+  int sum = 0;
+  if (root == NULL) {
+    return 0;
+  }
+  queue<TreeNode<int> *> q;
+  TreeNode<int> *temp = root;
+  q.push(temp);
+  while (!q.empty()) {
+    TreeNode<int> *child = q.front();
+    sum += child->data;
+    q.pop();
+    for (int i = 0; i < child->children.size(); i++) {
+      q.push(child->children[i]);
+    }
+  }
+  return sum;
+}
 int main(){
     // TreeNode<int>* root = new TreeNode<int>(10);
     // TreeNode<int>* node1 = new TreeNode<int>(20);
@@ -92,5 +109,6 @@ int main(){
     // root->children.push_back(node2);
     TreeNode<int>* root = takeInputLevelwise();
     // printLevelwise(root);
-    cout<<numNodes(root);
+    // cout<<numNodes(root);
+    cout<<sumOfNodes(root);
 }

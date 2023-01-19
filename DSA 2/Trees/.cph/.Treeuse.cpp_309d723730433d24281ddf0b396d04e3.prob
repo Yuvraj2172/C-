@@ -1,0 +1,1 @@
+{"name":"Local: Treeuse","url":"e:\\C++\\DSA 2\\Trees\\Treeuse.cpp","tests":[{"id":1674140942419,"input":"10 3 20 30 40 2 40 50 0 0 0 0 ","output":"190"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\C++\\DSA 2\\Trees\\Treeuse.cpp","group":"local","local":true}
