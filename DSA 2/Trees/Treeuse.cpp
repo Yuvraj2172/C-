@@ -77,15 +77,11 @@ void printTree(TreeNode<int>* root){
     }
 }
 int numNodes(TreeNode<int>* root){
-    if(root==NULL)return;
-    if(root->children.size()==0){
-        return 0;
-    }
     int ans =1;
     for(int i=0;i<root->children.size();i++){
         ans += numNodes(root->children[i]);
     }
-    return ans+1;
+    return ans;
 }
 
 int main(){
