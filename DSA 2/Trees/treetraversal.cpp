@@ -124,6 +124,13 @@ void preorder(TreeNode<int>* root){
         preorder(root->children[i]);
     }
 }
+void postOrderTraversal(TreeNode<int>* root){
+    if(root == NULL)return;
+    for(int i=0;i<root->children.size();i++){
+        postOrderTraversal(root->children[i]);
+    }
+    cout<<root->data<<" ";
+}
 int main(){
     // TreeNode<int>* root = new TreeNode<int>(10);
     // TreeNode<int>* node1 = new TreeNode<int>(20);
@@ -134,5 +141,5 @@ int main(){
     // printLevelwise(root);
     // cout<<numNodes(root);
     // cout<<sumOfNodes(root);
-    preorder(root);
+    postOrderTraversal(root);
 }
