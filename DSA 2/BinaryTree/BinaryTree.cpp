@@ -1,15 +1,15 @@
 #include<bits/stdc++.h>
 template <typename T>
-class BinartTreeNode{
+class BinaryTreeNode{
     public:
     T data;
-    BinartTreeNode * left;
-    BinartTreeNode *right;
-    BinartTreeNode(T data){
+    BinaryTreeNode * left;
+    BinaryTreeNode *right;
+    BinaryTreeNode(T data){
         this->data = data;
         left = right = NULL;
     }
-    ~BinartTreeNode(){
+    ~BinaryTreeNode(){
         delete left;
         delete right;
     }
