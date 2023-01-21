@@ -102,12 +102,19 @@ int numNodes(BinaryTreeNode<int>* root){
     if(root==NULL)return 0;
     return 1 + numNodes(root->left) + numNodes(root->right);
 }
+void inOrder(BinaryTreeNode<int>* root ){
+    if(root == NULL)return;
+    inOrder(root->left);
+    cout<<root->data<<" ";
+    inOrder(root->right);
+}
 // 1 2 3 4 5 6 7 -1 -1 -1 -1 8 9 -1 -1 -1 -1 -1 -1 
 int main()
 {
     BinaryTreeNode<int> *root = takeInputLevelwise();
     // printTree(root);
-    printLevelWise(root);
+    // printLevelWise(root);
+    inOrder(root);
     cout<<"Number of Nodes : "<<numNodes(root);
     delete root;
 }
