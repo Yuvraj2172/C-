@@ -26,14 +26,39 @@ BinaryTreeNode<int>* takeInput(){
     root->left = leftChild;
     root->right = rightChild;
 }
+BinaryTreeNode<int>* takeInputLevelwise(){
+    int rootData;
+    cout<<"Enter root data ";
+    cin>>rootData;
+    if(rootData == -1)return NULL;
+    BinaryTreeNode<int>* root = new BinaryTreeNode<int>(rootData);
+    queue<BinaryTreeNode<int>*> q;
+    q.push(root);
+    while(!q.empty()){
+        BinaryTreeNode<int>* front = q.front();
+        q.pop();
+        cout<<"Enter left child of "<<front->data<<"\n";
+        int leftChildData;
+        cin>>leftChildData;
+        if(leftChildData!=-1){
+            BinaryTreeNode<int>* child  = new BinaryTreeNode<int>(leftChildData);
+            front->left = child;
+            q.push(child);
+        }
+        cout<<"Enter right child of "<<front->data<<"\n";
+        int rightChildData;
+        cin>>rightChildData;
+        if(rightChildData!=-1){
+            BinaryTreeNode<int>* child  = new BinaryTreeNode<int>(rightChildData);
+            front->right = child;
+            q.push(child);
+        }
+    }
+    return root;
+}
 int main()
 {
-    // BinaryTreeNode<int> *root = new BinaryTreeNode<int>(1);
-    // BinaryTreeNode<int> *node1 = new BinaryTreeNode<int>(2);
-    // BinaryTreeNode<int> *node2 = new BinaryTreeNode<int>(3);
-    // root->left = node1;
-    // root->right = node2;
-    BinaryTreeNode<int>* root = takeInput();
+    BinaryTreeNode<int>* root = takeInputLevelwise();
     printTree(root);
     delete root;
 }
