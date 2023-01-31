@@ -12,6 +12,7 @@ void kSortedArray(int input[] ,int n , int k){
         pq.push(input[i]);
         j++;
     }
+    
     while(!pq.empty()){
         input[j++] = pq.top();
         pq.pop();
