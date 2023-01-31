@@ -25,7 +25,7 @@ void inplateHeapSort(int pq[], int n)
         int temp = pq[0];
         pq[0] = pq[size - 1];
         pq[size - 1] = temp;
-        size--;
+        size-=1;
 
         int parentIndex = 0;
         int lci = 2 * parentIndex + 1;
