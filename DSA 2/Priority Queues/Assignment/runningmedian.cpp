@@ -16,3 +16,37 @@ void findMedian(int *arr, int n)
 
     }
 }
+
+//optimized way - Piority Queue
+#include<bits/stdc++.h>
+void findMedian(int *arr, int n)
+{
+    priority_queue<int> maxheap;
+    priority_queue<int , vector<int> , greater<int>> minheap;
+    for(int i=0;i<n;i++){
+        if(i==0){
+            maxheap.push(arr[i]);
+        }
+        else {
+            if(arr[i] < maxheap.top())maxheap.push(arr[i]);
+            else minheap.push(arr[i]);
+        }
+        if(int(maxheap.size() - minheap.size()) > 1){
+            int x = maxheap.top();
+            maxheap.pop();
+            minheap.push(x);
+        }
+        if(int(minheap.size() - maxheap.size()) >1){
+            int x = minheap.top();
+            minheap.pop();
+            maxheap.push(x);
+        }
+        int c = maxheap.size() + minheap.size();
+        if(c%2==0){
+            cout<<(maxheap.top() + minheap.top())/2<<" ";
+        }else {
+            if(maxheap.size() > minheap.size())cout<<maxheap.top()<<" ";
+            else cout<<minheap.top()<<" ";
+        }
+    }
+}
