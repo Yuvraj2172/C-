@@ -15,5 +15,5 @@ int main(){
         ans.push_back(v[i]);
     }
    }
-   for(auto it : ans)cout<<it<<" ";
+   for(auto it : ans)cout<<it<<" ";maxfreq
 }

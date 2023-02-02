@@ -12,4 +12,4 @@ int highestFrequency(int arr[], int n) {
         if(mp[arr[i]]== maxfreq)return arr[i];
     }
     return -1;
-}
+}a
