@@ -1,4 +1,4 @@
-#include<TrieNode.h>
+#include "TrieNode.h"
 #include<bits/stdc++.h>
 using namespace std;
 class Trie{
@@ -29,6 +29,7 @@ class Trie{
     void insertWord(string word){
         insertWord(root , word);
     }
+    
     bool search(TrieNode * root , string word){
     TrieNode *pCrawl = root;
  
@@ -40,7 +41,39 @@ class Trie{
  
         pCrawl = pCrawl->children[index];
     }
- 
     return (pCrawl->isTerminal);
+    }
+    bool search(string word){
+        return search(root , word);
+    }
+    void removeWord(TrieNode * root , string word){
+        if(word.size()==0){
+            root->isTerminal = false;
+            return;
+        }
+
+        //Small calculation
+        TrieNode* child;
+        int index = word[0] - 'a';
+        if(root->children[index] !=NULL){
+            child = root->children[index];
+        }
+        else {
+            //Word not found
+            return;
+        }
+        removeWord(child, word.substr(1));
+
+        //Remove child Node if it is useless
+        if(child->isTerminal == false){
+            for(int i=0;i<26;i++){
+                if(child ->children[i]!=NULL)return;
+            }
+            delete child;
+            root->children[index]= NULL;
+        }
+    }
+    void removeWord(string word){
+        removeWord(root , word);
     }
 };
