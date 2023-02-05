@@ -29,4 +29,18 @@ class Trie{
     void insertWord(string word){
         insertWord(root , word);
     }
+    bool search(TrieNode * root , string word){
+    TrieNode *pCrawl = root;
+ 
+    for (int i = 0; i < word.length(); i++)
+    {
+        int index = word[i] - 'a';
+        if (!pCrawl->children[index])
+            return false;
+ 
+        pCrawl = pCrawl->children[index];
+    }
+ 
+    return (pCrawl->isTerminal);
+    }
 };
