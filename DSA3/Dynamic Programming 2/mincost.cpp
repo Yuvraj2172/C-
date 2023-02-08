@@ -36,6 +36,31 @@ int minCostPath(int **input, int m, int n)
 	}
 	return output[0][0];
 }
+#include<bits/stdc++.h>
+int helper(int ** arr , int m , int n , int i , int j, int** ans){
+	if(i == m-1 && j == n-1 )return arr[i][j];
+	if(i>m-1 || j> n-1)return INT_MAX;
+	if(ans[i][j]!=-1)return ans[i][j];
+	int horizontal = helper(arr, m , n , i+1, j,ans );
+	int vertical = helper(arr , m , n , i , j+1, ans);
+	int diagonal = helper(arr , m , n ,i+1, j+1, ans);
+	int sum=arr[i][j]+min(horizontal , min(vertical , diagonal));
+	ans[i][j] = sum;
+	return sum;
+}
+int minCostPath(int **input, int m, int n)
+{	int i=0, j =0;
+	int **ans = new int*[m];
+	for(int i=0;i<m;i++){
+		ans[i] = new int[n];
+	}
+	for(int i=0;i<m;i++){
+		for(int j = 0 ;j<n;j++){
+			ans[i][j] =-1;
+		}
+	}
+	return helper(input , m , n , i, j,ans);
+}
 int main()
 {
     int **arr, n, m;
