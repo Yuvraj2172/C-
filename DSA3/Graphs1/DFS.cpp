@@ -44,6 +44,10 @@ int main()
     for (int i = 0; i < n; i++)
         visited[i] = false;
     print(edges, n, 0, visited);
+    // printBFS(edges , n , 0);
     delete [] visited;
-    delete [] edges;
+    for(int i=0;i<n;i++){
+        delete [] edges[i];
+    }
+
 }
