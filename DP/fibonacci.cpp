@@ -9,10 +9,6 @@ int f(int n ,vector<int> &dp){
 }
 
 int main(){
-    // #ifndef ONLINE_JUDGE
-    // freopen("input.txt","r",stdin);
-    // freopen("output.txt","w",stdout);
-    // #endif 
     int n;
     cin>>n;
     vector<int> dp(n+1,-1);
