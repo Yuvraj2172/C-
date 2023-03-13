@@ -1,0 +1,1 @@
+{"name":"Local: baseconversion","url":"e:\\C++\\CP\\Recursion\\baseconversion.cpp","tests":[{"id":1678684753240,"input":"2\n10\n3\n","output":"1010\n11\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\C++\\CP\\Recursion\\baseconversion.cpp","group":"local","local":true}
