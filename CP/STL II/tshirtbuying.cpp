@@ -1,37 +1,3 @@
-#include<bits/stdc++.h>
-using namespace std;
-int f(int n ,vector<int> &dp){
-    // if(n<=1)return n;
-    if(dp[n]!=-1){
-        return dp[n];
-    }
-    return dp[n]=f(n-1,dp) + f(n-2,dp);
-}
-
-int main(){
-    int n;
-    cin>>n;
-    // vector<int> dp(n+1,-1);
-    // dp[0] =0;
-    // dp[1]=1;
-    // cout<<f(n,dp);
-    // for(int i=2;i<=n;i++){
-    //     dp[i] = dp[i-1] + dp[i-2];
-    // }
-    int prev2 =0;
-    int prev1=1;
-    for(int i=2;i<=n;i++){
-        int curr = prev1+ prev2;
-        prev2 = prev1;
-        prev1 = curr;
-    }
-    cout<<prev1;
-    // cout<<dp[n];
-    return 0;  
-}
-
-
-
         #include<bits/stdc++.h>
         #define ll long long
         #define pb push_back
@@ -39,14 +5,34 @@ int main(){
         #define fr(i,a,b) for(int i = a ; i < b ; i++)
         #define loop(x,n) for(int x = 0 ; x < n; ++ x)
         #define mod 1e9+7
-        #define inf(1LL<<60)
+        // #define inf(1LL<<60)
         #define all(x) (x).begin(),x.end()
         using namespace std;
         void precal(){
 
         }
         void solve(){
-
+            int n;
+            cin>>n;
+            vector<int>p(n),a(n),b(n);
+            fr(i,0,n) cin>>p[i];
+            fr(i,0,n)cin>>a[i];
+            fr(i,0,n)cin>>b[i];
+            set<int> s[4];
+            for(int i=0;i<n;i++){
+                s[a[i]].insert(p[i]);
+                s[b[i]].insert(p[i]);
+            }
+            int m;
+            cin>>m;
+            fr(i,0,m){
+                int col,price=0;
+                cin>>col;
+                price=*s[col].begin();
+                for(int j=1;j<=3;j++)s[j].erase(price);
+                if(price)cout<<price<<" ";
+                else cout<<-1<<" ";
+            }
         }
         int main(){
             fast_io;
