@@ -1,0 +1,1 @@
+{"name":"Local: dqueue","url":"e:\\C++\\CP\\STL II\\dqueue.cpp","tests":[{"id":1681059014310,"input":"5 \n1 1 1 1 2","output":"3"},{"id":1681059337367,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\C++\\CP\\STL II\\dqueue.cpp","group":"local","local":true}
