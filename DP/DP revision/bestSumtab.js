@@ -21,3 +21,4 @@ console.log(bestSum(7,[5,4,3,7]));
 console.log(bestSum(7,[2,4]));
 console.log(bestSum(8,[2,3,5]));
 console.log(bestSum(300,[7,14]));
+console.log(bestSum(300,[1,2,5,25]));
