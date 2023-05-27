@@ -8,6 +8,7 @@ void helper(string target, vector<string> &arr, vector<vector<string>> &ans, vec
     if (target == "")
     {
         ans.push_back(temp);
+        // return;
     }
     for (auto it : arr)
     {
