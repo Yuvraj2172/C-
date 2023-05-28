@@ -1,3 +1,5 @@
+// BFS traversal is more efficient here than DFS...
+
 const shortestPath = (edges, nodeA, nodeB) => {
   const graph = buildGraph(edges);
   const visited = new Set();
