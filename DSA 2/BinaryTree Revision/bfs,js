@@ -1,0 +1,12 @@
+const breadthFirstValues = (root) => {
+  if (root === null) return [];
+  const q = [root];
+  const ans = [];
+  while (q.length > 0) {
+    const current = q.shift();
+    ans.push(current.val);
+    if (current.left != null) q.push(current.left);
+    if (current.right != null) q.push(current.right);
+  }
+  return ans;
+};
